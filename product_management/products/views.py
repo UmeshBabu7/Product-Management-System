@@ -20,6 +20,11 @@ import json
 
 # Create your views here.
 
+def upload_page(request):
+    """Render the file upload page"""
+    return render(request, 'products/upload.html')
+
+
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def upload_file(request):
