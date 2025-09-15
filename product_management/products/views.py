@@ -141,3 +141,19 @@ def product_list(request):
     products = Product.objects.all()
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
+
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def product_detail(request, sku):
+    """API endpoint to get a specific product by SKU"""
+    try:
+        product = Product.objects.get(sku=sku)
+        serializer = ProductSerializer(product)
+        return Response(serializer.data)
+    except Product.DoesNotExist:
+        return Response(
+            {'error': 'Product not found'}, 
+            status=status.HTTP_404_NOT_FOUND
+        )
