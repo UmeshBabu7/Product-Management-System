@@ -1,0 +1,8 @@
+sku,name,category,price,stock_qty,status
+SKU0001,Product 1,Clothing,232.54,189,inactive
+SKU0002,Product 2,Electronics,337.42,60,active
+SKU0003,Product 3,Home,416.91,104,inactive
+SKU0004,Product 4,Clothing,168.42,120,inactive
+SKU0005,Product 5,Sports,129.23,75,active
+SKU0006,Product 6,Books,92.22,136,active
+SKU0007,Product 7,Beauty,100.22,60,active
