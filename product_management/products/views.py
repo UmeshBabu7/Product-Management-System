@@ -132,3 +132,12 @@ def process_file(file_path, file_extension):
             'error': f'Error processing file: {str(e)}',
             'success': False
         }
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def product_list(request):
+    """API endpoint to list all products"""
+    products = Product.objects.all()
+    serializer = ProductSerializer(products, many=True)
+    return Response(serializer.data)
